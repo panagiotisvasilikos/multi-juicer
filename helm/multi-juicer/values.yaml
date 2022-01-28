@@ -139,10 +139,12 @@ juiceShop:
     products:
       -
         name: 'Solo: A Star Wars Story - Blu-ray'
+        description: "Solo: A Star Wars Story (also known simply as Solo) is a 2018 American space Western film."
         price: 179
         image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/1109344.jpeg'
         reviews:
           - { text: 'One of my favorite movies!', author: admin }
+        urlForProductTamperingChallenge: "https://www.youtube.com/watch?v=jPEYpryMp2s"
       -
         name: 'Star Wars: The Force Awakens - DVD'
         price: 140
@@ -240,11 +242,6 @@ juiceShop:
         price: 399
         image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/NUMBOBAXMASGR.jpeg'
       -
-        name: 'Mozilla custom hoodie'
-        price: 19.66
-        reviews:
-          - { text: 'You gotta get this.', author: jim }
-      -
         name: 'Star Wars 42 - Silent Drifting 30X40 Print (Poster)'
         price: 149
         image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/P30X40CM0289.jpeg'
@@ -277,6 +274,7 @@ juiceShop:
         name: 'Original Stormtrooper Travel Mug Black'
         price: 149
         image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/THUP1002207.jpeg'
+        deletedDate: '2017-07-01'
       -
         name: 'Star Wars IV Replica 1/1 Shadow Stormtrooper Helmet'
         description: 'Utilizing the best features of the various helmets made for the Classic Star Wars trilogy.'
@@ -291,31 +289,19 @@ juiceShop:
         price: 300
         image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/star-wars-zip-fleece-jacket-adult_1-990x634.jpeg'
       -
-        name: 'OWASP Zed Attack Proxy (ZAP)'
-        description: 'ZAP is one of the world’s most popular free security tools and can help you automatically find security vulnerabilities while you are developing and testing your applications.'
-        price: 0.01
-        image: zap.png
-        urlForProductTamperingChallenge: 'https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project'
-      -
         name: 'Christmas Darth Vader Jumper (2014 Edition)'
         description: 'Contains a random selection of stickers and three Unisex t-shirts (3XL) for an unbeatable price!'
         price: 399
         image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/JAN16NEW00GR.jpeg'
         useForChristmasSpecialChallenge: true
       -  
-        name: 'xss'
-        description: 'This rare item was designed and handcrafted in Sweden. This is why it is so incredibly expensive despite its complete lack of purpose.'
+        name: 'Jedi Juice'
+        description: 'Drink it and feel the FORCE.'
         price: 99.99
-        image: 'https://github.com/juice-shop/juice-shop/blob/master/frontend/src/assets/public/images/products/3d_keychain.jpg'
+        image: 'https://raw.githubusercontent.com/juice-shop/juice-shop/blob/master/frontend/src/assets/public/images/products/3d_keychain.jpg'
         fileForRetrieveBlueprintChallenge: 'https://raw.githubusercontent.com/juice-shop/juice-shop/master/frontend/src/assets/public/images/products/JuiceShop.stl'
         exifForBlueprintChallenge:
-          - OpenSCAD
-      -
-        name: 'Global OWASP WASPY Award 2017 Nomination'
-        description: 'Your chance to nominate up to three quiet pillars of the OWASP community ends 2017-06-30! <a href="https://www.owasp.org/index.php/WASPY_Awards_2017">Nominate now!</a>'
-        price: 0.03
-        image: waspy.png
-        deletedDate: '2017-07-01' 
+          - OpenSCAD 
     ctf:
       showFlagsInNotifications: true
   # -- Specify a custom NODE_ENV for JuiceShop. If value is changed to something other than 'multi-juicer' it's not possible to set a custom config via `juiceShop.config`.
