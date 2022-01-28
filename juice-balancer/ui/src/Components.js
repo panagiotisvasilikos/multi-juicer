@@ -38,7 +38,7 @@ export const Form = styled.form`
 `;
 
 export const Button = styled.button`
-  background-color: #cf3a23;
+  background-color: #000000;
   padding: 12px 32px;
   font-size: 14px;
   font-weight: 600;

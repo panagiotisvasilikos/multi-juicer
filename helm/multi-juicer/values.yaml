@@ -34,8 +34,8 @@ balancer:
     name: balancer
     # -- Set this to a fixed random alpa-numeric string (recommended length 24 chars). If not set this get randomly generated with every helm upgrade, each rotation invalidates all active cookies / sessions requirering users to login again.
     cookieParserSecret: null
-  repository: iteratec/juice-balancer
-  tag: null
+  repository: panvas/multi-jedijuicer
+  tag: latest
   # -- Number of replicas of the juice-balancer deployment
   replicas: 1
   service:
@@ -82,23 +82,242 @@ juiceShop:
   maxInstances: 10
   # -- Juice Shop Image to use
   image: bkimminich/juice-shop
-  tag: v13.1.0
+  tag: latest
   # -- Change the key when hosting a CTF event. This key gets used to generate the challenge flags. See: https://pwning.owasp-juice.shop/part1/ctf.html#overriding-the-ctfkey
-  ctfKey: "zLp@.-6fMW6L-7R3b!9uR_K!NfkkTr"
+  ctfKey: "zLp@.-6fMW6L-7R3b!9uR_K!NfkkTrXssSolo"
   # -- Specify a custom Juice Shop config.yaml. See the JuiceShop Config Docs for more detail: https://pwning.owasp-juice.shop/part1/customization.html#yaml-configuration-file
   # @default -- See values.yaml for full details
   config: |
     application:
-      logo: https://raw.githubusercontent.com/iteratec/multi-juicer/master/images/multijuicer-icon-only-padding.png
-      favicon: https://raw.githubusercontent.com/iteratec/multi-juicer/master/juice-balancer/ui/public/favicon.ico
-      showVersionNumber: false
+      domain: mosespa.io
+      name: 'Mos Espa Market'
+      logo: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/star-wars-logo-png-8.png'
+      favicon: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/star-wars-logo-png-8.png'
+      theme: bluegrey-lightgreen
       showGitHubLinks: false
+      localBackupEnabled: false
+      altcoinName: galacticCredit
+      privacyContactEmail: 'donotreply@mosespa.priv'
+      customMetricsPrefix: marketplace
+      chatBot:
+        name: 'R2-D2'
+        greeting: "Beep boop weep"
+        trainingData: 'botDefaultTrainingData.json'
+        defaultResponse: "Beep bee bee boop bee doo weep"
+        avatar: 'https://www.clipartmax.com/png/full/241-2416129_r2d2-big-star-wars-pixel-art.png'
+      social:
+        twitterUrl: 'https://twitter.com/IKEA'
+        facebookUrl: null
+        slackUrl: null
+        redditUrl: null
+        pressKitUrl: null
+        questionnaireUrl: null
+      recyclePage:
+        topProductImage: Gear-200155340.jpg
+        bottomProductImage: Gear-200155753.jpg
+      welcomeBanner:
+        showOnFirstStart: false
+      cookieConsent:
+        backgroundColor: '#000000'
+        textColor: '#FFFFFF'
+        buttonColor: '#008080'
+        buttonTextColor: '#ffffff'
+        message: 'We are not only using cookies, we are also recording you live.'
+        dismissText: 'Never mind!'
+        linkText: 'What the heck? I want to watch that!!'
+        linkUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+      securityTxt:
+        contact: 'mailto:donotreply@mosespa.sec'
+        encryption: ~
     challenges:
-      showHints: true
+      showHints: false
+      codingChallengesEnabled: never
+      xssBonusPayload: '<iframe width="560" height="315" src="https://www.youtube.com/watch?v=_D0ZQPqeJkk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+      showFeedbackButtons: false
     hackingInstructor:
-      isEnabled: true
+      isEnabled: false
+    products:
+      -
+        name: 'Solo: A Star Wars Story - Blu-ray'
+        price: 179
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/1109344.jpeg'
+        reviews:
+          - { text: 'One of my favorite movies!', author: admin }
+      -
+        name: 'Star Wars: The Force Awakens - DVD'
+        price: 140
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/191218.jpeg'
+      -
+        name: 'Star Wars Rebels Darth Maul'
+        description: 'A Diamond Select Toys release! The Sith warrior is now the latest animated bust!' 
+        price: 595
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/APR212363.jpeg'
+        reviews:
+          - { text: 'I bought it, would buy again. 5/7', author: admin }
+      -
+        name: 'Star Wars Rebels - DVD'
+        price: 100
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/BUA0246701.jpeg'
+      -
+        name: 'Star Wars Clone Wars Asaji'
+        price: 995
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/DEC202068.jpeg'
+      -
+        name: 'Star Wars - Princess Leia Retro Funko Pop T-Shirt'
+        price: 149.05
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/FK27255GR.jpeg'
+      -
+        name: 'Star Wars The Mandalorian - Pop! - Mandalorian'
+        price: 69
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/FK53046.jpeg'
+      -
+        name: 'Star Wars The Mandalorian - Pop! - Bo-Katan Kryze'
+        price: 128
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/FK54523.jpeg'
+      -
+        name: 'Star Wars VII - Pop! - Rey Skywalker '
+        price: 229
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/FK55498.jpeg'
+      -
+        name: 'Star Wars Rebels - Pop! - Imperial Super Commando'
+        price: 229
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/FK55911.jpeg'
+      -
+        name: 'Star Wars - Pop! - Stormtrooper (Pride)'
+        price: 131
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/FK56581.jpeg'
+        reviews:
+          - { text: 'One of my favorites.', author: jim }
+      -
+        name: 'Star Wars Black Series Sith Trooper 15 cm'
+        description: "From Hasbro's Black Series comes this fully articulated action figure"
+        price: 599
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/HASE4073_1.jpeg'
+      -
+        name: 'The Child Tentacle Soup'
+        price: 129
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/HASF28571.jpeg'
+      -
+        name: 'Electronic Helmet Boba Fett (Re-Armored)'
+        price: 1499
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/HASF5281_1.jpeg'
+      -
+        name: 'Stormtropper Bike'
+        price: 999
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/Huffy_StormtrooperBike_2-990x634.jpeg'
+        reviews:
+          - { text: 'My kid loves it.', author: bender }
+      -
+        name: 'Star Wars the Mandalorian Child '
+        price: 1200
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/JAN211970.jpeg'
+      -
+        name: 'Star Wars Premier Collection Mandalorian Mk3 Statue'
+        price: 1695
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/JUL201909.jpeg'
+      -
+        name: 'Star Wars Artfx Plus Luke Skywalker X-Wing Pilo'
+        price: 1495
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/KTOSW163.jpeg'
+      -
+        name: 'STAR WARS Mug (STORMTROOPER XMAS)'
+        price: 99
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/MG23586.jpeg'
+      -
+        name: 'STAR WARS Mug (DARTH VADER XMAS)'
+        price: 99
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/MG23587.jpeg'
+      -
+        name: 'Colour Contrast Analyser Firefox Extension'
+        description: 'The Colour Contrast Analyser Firefox extension lists colour combinations used in the document in a table that summarises the foreground colour, background colour, luminosity contrast ratio, and the colour difference and brightness difference used in the algorithm suggested in the 26th of April 2000 working draft for Accessibility Evaluation and Repair Tools (AERT). Each element is also listed with its parent elements, and class and id attribute values when specified to make it easier to locate the elements. <br/><span style="color:red;">This extension has been removed because side-effects with other plugins.</span>'
+        price: 0.99
+        image: 'http://juicystudio.com/img/logo.gif'
+        keywordsForPastebinDataLeakChallenge:
+          - juicenote
+          - magische firefox suche
+      -
+        name: 'Official Star Wars Boba Fett Nordic Christmas Jumper Ugly Sweater'
+        price: 399
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/NUMBOBAXMASGR.jpeg'
+      -
+        name: 'Mozilla custom hoodie'
+        price: 19.66
+        reviews:
+          - { text: 'You gotta get this.', author: jim }
+      -
+        name: 'Star Wars 42 - Silent Drifting 30X40 Print (Poster)'
+        price: 149
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/P30X40CM0289.jpeg'
+      -
+        name: 'Star Wars 30 - A Princess Alone 30X40 Print (Poster)'
+        price: 149
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/P30X40CM0290.jpeg'
+      -
+        name: 'Star Wars 39 - The Empire Strikes Back 30X40 Print (Poster)'
+        price: 149
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/P30X40CM0294.jpeg'
+      -
+        name: 'Star Wars 52 - To Take the Tarkin 30X40 Print (Poster)'
+        price: 149
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/P30X40CM0295.jpeg'
+
+      - 
+        name: 'Star Wars The Mandalorian - The Child Pyjamas Set'
+        price: 299
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/PJ304810STWGR.jpeg'
+      -
+        name: 'Star Wars Premium Format R2-D2 1/4 Resin Statue 30cm'
+        price: 5495
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/SS300509P.jpeg'
+      -
+        name: 'Original Stormtrooper Travel Mug White'
+        price: 149
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/THUP1002206.jpeg'
+      -
+        name: 'Original Stormtrooper Travel Mug Black'
+        price: 149
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/THUP1002207.jpeg'
+      -
+        name: 'Star Wars IV Replica 1/1 Shadow Stormtrooper Helmet'
+        description: 'Utilizing the best features of the various helmets made for the Classic Star Wars trilogy.'
+        price: 2999
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/anoswhelmet006.jpeg'
+      -
+        name: 'Star Wars Premium Format C-3PO 1/4 Resin Statue 49cm'
+        price: 5795
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/c-3po-pewter-figurine-CURATE-PRODUCTS-990x634.jpeg'
+      -
+        name: 'Star Wars zip jacket'
+        price: 300
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/star-wars-zip-fleece-jacket-adult_1-990x634.jpeg'
+      -
+        name: 'OWASP Zed Attack Proxy (ZAP)'
+        description: 'ZAP is one of the world’s most popular free security tools and can help you automatically find security vulnerabilities while you are developing and testing your applications.'
+        price: 0.01
+        image: zap.png
+        urlForProductTamperingChallenge: 'https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project'
+      -
+        name: 'Christmas Darth Vader Jumper (2014 Edition)'
+        description: 'Contains a random selection of stickers and three Unisex t-shirts (3XL) for an unbeatable price!'
+        price: 399
+        image: 'https://raw.githubusercontent.com/panagiotisvasilikos/starwarsimages/main/images/JAN16NEW00GR.jpeg'
+        useForChristmasSpecialChallenge: true
+      -  
+        name: 'xss'
+        description: 'This rare item was designed and handcrafted in Sweden. This is why it is so incredibly expensive despite its complete lack of purpose.'
+        price: 99.99
+        image: 'https://github.com/juice-shop/juice-shop/blob/master/frontend/src/assets/public/images/products/3d_keychain.jpg'
+        fileForRetrieveBlueprintChallenge: 'https://raw.githubusercontent.com/juice-shop/juice-shop/master/frontend/src/assets/public/images/products/JuiceShop.stl'
+        exifForBlueprintChallenge:
+          - OpenSCAD
+      -
+        name: 'Global OWASP WASPY Award 2017 Nomination'
+        description: 'Your chance to nominate up to three quiet pillars of the OWASP community ends 2017-06-30! <a href="https://www.owasp.org/index.php/WASPY_Awards_2017">Nominate now!</a>'
+        price: 0.03
+        image: waspy.png
+        deletedDate: '2017-07-01' 
     ctf:
-      showFlagsInNotifications: false
+      showFlagsInNotifications: true
   # -- Specify a custom NODE_ENV for JuiceShop. If value is changed to something other than 'multi-juicer' it's not possible to set a custom config via `juiceShop.config`.
   nodeEnv: "multi-juicer"
   # -- Optional resources definitions to set for each JuiceShop instance
