@@ -40,7 +40,7 @@ balancer:
   replicas: 1
   service:
     # -- Kubernetes service type
-    type: ClusterIP
+    type: LoadBalancer
     # -- internal cluster service IP
     clusterIP: null
     # -- IP address to assign to load balancer (if supported)
